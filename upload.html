@@ -43,25 +43,24 @@
     <div class="col-sm">
         <h1>Download the compressed GLB File</h1>
     </div>
-    <div class="col-lg-7">
-            <!-- The fileinput-button span is used to style the file input field as button -->
-            <span class="btn btn-success fileinput-button">
-              <i class="glyphicon glyphicon-plus"></i>
-              <span>Add files...</span>
-              <input type="file" name="files[]" multiple="">
-            </span>
-            <button type="submit" class="btn btn-primary start">
-              <i class="glyphicon glyphicon-upload"></i>
-              <span>Start upload</span>
-            </button>
-            <input type="checkbox" class="toggle">
-            <!-- The global file processing state -->
-            <span class="fileupload-process"></span>
-          </div>
     <form action="/downloader" method="POST"
           enctype="multipart/form-data">
-        <input type="file" id="upload" name="downloadfile">
-        <input type="submit">
+    <body>
+        <input type="file">
+      <file>
+      <p class="p">The URL of file is : </p>
+    </body>
+    <script>
+        var Element = document.querySelector('input');
+        var file = document.querySelector('file');
+        Element.addEventListener('change', function() {
+          var url = URL.createObjectURL(Element.files[0]);
+          file.src = url;
+          console.log(url);
+          var d=document.querySelector(".p");
+          d.textContent+=url;
+    });
+    </script>
     </form>
 </body>
 </html>

@@ -52,19 +52,19 @@
         <script type="text/javascript">
             const dinput = document.getElementById('download');
             const dlink = document.getElementById('dlink');
-            let dobjectURL;
+            let objectURL;
 
             dinput.addEventListener('change', function () {
-              if (dobjectURL) {
+              if (objectURL) {
                 // revoke the old object url to avoid using more memory than needed
-                URL.revokeObjectURL(dobjectURL);  
+                URL.revokeObjectURL(objectURL);  
               }
 
               const file = this.files[0];
               objectURL = URL.createObjectURL(file);
 
               dlink.download = file.name; // this name is used when the user downloads the file
-              dlink.href = dobjectURL;
+              dlink.href = objectURL;
             });
         </script>
      

@@ -50,8 +50,9 @@
       <file>
       <p class="p">The URL of file is : </p>
     </body>
-         <a href="
+         
     <script>
+    function downlink() {
         var Element = document.querySelector('input');
         var file = document.querySelector('file');
         Element.addEventListener('change', function() {
@@ -61,7 +62,9 @@
           var d=document.querySelector(".p");
           d.textContent+=url;
     });
-    </script>">Link to the Uploaded GLB File</a>
+                        }
+    </script>
+    <a href="javascript:downlink();">Link to the Uploaded GLB File</a>
     </form>
 </body>
 </html>

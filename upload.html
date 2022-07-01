@@ -49,16 +49,21 @@
         <input type="file" id="download" />
       <file>
       <p class="p">The URL of file is : </p>
-    </body>    
+      <a id="dlink" download>Link to the Compressed GLB File</a>
+    </body> 
+      
     <script>
         var Element = document.querySelector('input');
         var file = document.querySelector('file');
+        var dlink = document.getElementById('dlink')
         Element.addEventListener('change', function() {
           var url = URL.createObjectURL(Element.files[0]);
           file.src = url;
           console.log(url);
           var d=document.querySelector('.p');
           d.textContent+=url;
+          dlink.download = file.name; // this name is used when the user downloads the file
+          dlink.href = url;
     });
     </script>
     

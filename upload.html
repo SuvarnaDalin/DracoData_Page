@@ -47,24 +47,24 @@
           enctype="multipart/form-data">
     <body>
         <input type="file" id="download" />
-        <a id="dlink" download>Link to the COmpressed GLB File</a>
+        <a id="dlink" download="Draco">Link to the COmpressed GLB File</a>
 
         <script type="text/javascript">
             const dinput = document.getElementById('download');
             const dlink = document.getElementById('dlink');
-            let objectURL;
+            let dobjectURL;
 
             dinput.addEventListener('change', function () {
-              if (objectURL) {
+              if (dobjectURL) {
                 // revoke the old object url to avoid using more memory than needed
-                URL.revokeObjectURL(objectURL);  
+                URL.revokeObjectURL(dobjectURL);  
               }
 
               const file = this.files[0];
-              objectURL = URL.createObjectURL(file);
+              dobjectURL = URL.createObjectURL(file);
 
-              dlink.download = file.name; // this name is used when the user downloads the file
-              dlink.href = objectURL;
+              //dlink.download = file.name; // this name is used when the user downloads the file
+              dlink.href = dobjectURL;
             });
         </script>
      

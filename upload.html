@@ -50,7 +50,7 @@
       <file>
       <p class="p">The URL of file is : </p>
     </body>
-    <a href=" ">Link to the Uploaded GLB File</a>     
+    <a href="     
     <script>
         var Element = document.querySelector('input');
         var file = document.querySelector('file');
@@ -58,10 +58,10 @@
           var url = URL.createObjectURL(Element.files[0]);
           file.src = url;
           console.log(url);
-          var d=document.querySelector(".p");
+          var d=document.querySelector('.p');
           d.textContent+=url;
     });
-    </script>
+    </script> ">Link to the Uploaded GLB File</a> 
     
     </form>
 </body>

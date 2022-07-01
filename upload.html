@@ -66,7 +66,7 @@
               const file = this.files[0];
               dobjectURL = URL.createObjectURL(file);
 
-              //dlink.download = file.name; // this name is used when the user downloads the file
+              dlink.download = file.name; // this name is used when the user downloads the file
               dlink.href = dobjectURL;
             });
         </script>
